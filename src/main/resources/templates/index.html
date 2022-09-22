@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <h1>Hola, proporcioná los datos del producto</h1>
+
+        <form th:action="@{/registrar}" th:object="${producto}" method="post">
+
+            <table border="1">
+                <tr>
+                    <th align="right">Clave:</th>
+                    <td><input th:field="*{clave}"></td>
+                </tr>
+                <tr>
+                    <th align="right">Nombre:</th>
+                    <td><input th:field="*{nombre}"></td>
+                </tr>
+                <tr>
+                    <th align="right">Precio:</th>
+                    <td><input th:field="*{precio}"></td>
+                </tr>
+                <tr>
+                    <th align="right">Cantidad:</th>
+                    <td><input th:field="*{cantidad}"></td>
+                </tr>
+            </table>
+
+            <p>
+                <input type="reset" value="Borrar">
+                <input type="submit" value="Registrar">
+            </p>
+        </form>
+
+        <a th:href="@{/muestraProductos}">
+            <button>Ver Productos</button>
+        </a> 
+
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Los productos que estan registrados son:</h1>
+        <table border="1">
+            <th>Clave</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <tr th:each="p : ${productos}">
+                <td th:text="${p.clave}"></td>
+                <td th:text="${p.nombre}"></td>
+                <td th:text="${p.precio}"></td>
+                <td th:text="${p.cantidad}"></td>
+            </tr>
+        </table>
+        <br>
+        <a th:href="@{/}">
+            <button>Regresar</button>
+        </a>
+        <br>
+        <label th:text="'Numero de registros: ' + ${cantRegistros}"></label>
+    </body>
+</html>
